@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
+
 public class javaGui extends JFrame{
 
     private JPanel panel1;
@@ -16,11 +17,12 @@ public class javaGui extends JFrame{
 
     public javaGui() throws FileNotFoundException {
 
-        File file = new File("E:\\javaMiniProject\\words.txt");
+        File file = new File("E:\\JAVA-Mini-Project\\javaMiniProject\\words.txt");
         Scanner sc = new Scanner(file);
 
-        String t = sc.nextLine ();
-        System.out.println(sc.nextLine());
+        String t = sc.nextLine ();//text
+        String th = sc.nextLine();//text hint
+        //System.out.println();
         submitButton.addActionListener(new ActionListener() {
             @Override
 
@@ -29,11 +31,18 @@ public class javaGui extends JFrame{
                 String t1 = textField1.getText();
 
                 if (CharSequence.compare(t, t1) == 0){
-                    JOptionPane.showMessageDialog(null, "It's the correct word !!");
+                        JOptionPane.showMessageDialog(null, "It's the correct word !!");
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "incorrect guess");
                 }
+            }
+        });
+        hintButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                JOptionPane.showMessageDialog(null, th);
             }
         });
     }

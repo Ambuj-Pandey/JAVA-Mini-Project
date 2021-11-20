@@ -1,3 +1,4 @@
-wor
+word
+A single distinct conceptual unit of language, comprising inflected and variant forms.
 kic
 pic
