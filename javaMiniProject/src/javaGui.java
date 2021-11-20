@@ -14,6 +14,7 @@ public class javaGui extends JFrame{
     private JButton submitButton;
     private JTextField textField1;
     private JButton hintButton;
+    private JLabel Label;
 
     public javaGui() throws FileNotFoundException {
 
@@ -22,6 +23,9 @@ public class javaGui extends JFrame{
 
         String t = sc.nextLine ();//text
         String th = sc.nextLine();//text hint
+        String t2 = t; //
+        t2 = t2.replaceAll("\\w", String.valueOf('-'));  //printing dashes
+        Label.setText(t2); // modifying dashes according to the word
         //System.out.println();
         submitButton.addActionListener(new ActionListener() {
             @Override
@@ -45,6 +49,9 @@ public class javaGui extends JFrame{
                 JOptionPane.showMessageDialog(null, th);
             }
         });
+
+
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {
