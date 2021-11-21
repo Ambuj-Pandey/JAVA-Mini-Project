@@ -35,7 +35,7 @@ public class javaGui extends JFrame {
         tw[1] = "switch";
         tw[2] = "kick";
         tw[3] = "mobile";
-        tw[4] = "vehicle";
+        tw[4] = "processor";
 
         for (int j = 0; j<=4; j++){
             t[i] = tw[j];
@@ -51,10 +51,10 @@ public class javaGui extends JFrame {
 
         String[] tdw =  new String[10];
         tdw[0] = "A single distinct conceptual unit of language, comprising inflected and variant forms.";
-        tdw[1] = "sample1";
-        tdw[2] = "sample2";
-        tdw[3] = "sample3";
-        tdw[5] = "sample4";
+        tdw[1] = "a small button or something similar that you press up or down in order to turn on electricity.";
+        tdw[2] = "To hit or move somebody/something with your foot.";
+        tdw[3] = "Able to move or be moved easily";
+        tdw[5] = "An integrated electronic circuit that performs the calculations that run a computer.";
         td[0] = tdw[0];
 
 
