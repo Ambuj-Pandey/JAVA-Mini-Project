@@ -1,6 +1,20 @@
 switch
-a small button or something similar that you press up or down in order to turn on electricity
+a small button or something similar that you press up or down in order to turn on electricity.
 word
 A single distinct conceptual unit of language, comprising inflected and variant forms.
 kick
 To hit or move somebody/something with your foot.
+laser
+ a device that emits light through a process of optical amplification based on the stimulated emission of electromagnetic radiation.
+ java
+ a high level, robust, object-oriented and secure programming language developed by Sun Microsystems.
+ motor
+ machine that converts electrical energy into mechanical energy.
+ hysteria
+ cultural event hosted by don bosco institute of technology.
+ processor
+ an integrated electronic circuit that performs the calculations that run a computer.
+ tesla
+ biggest electric car company.
+ ISRO
+ india's space research organisation.
