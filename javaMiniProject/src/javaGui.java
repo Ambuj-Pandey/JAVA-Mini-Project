@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-import java.util.*;
+
 
 
 
@@ -19,12 +19,12 @@ public class javaGui extends JFrame {
     private JTextArea howToPlayPressTextArea;
 
 
-    int i = 0,n=0,j=0,k=0;
+    int i = 0,n=0,j,k=0;
     String tl;
-    public javaGui() throws FileNotFoundException {
+    public javaGui() {
 
        // File file = new File("E:\\JAVA-Mini-Project\\javaMiniProject\\words.txt");
-        Scanner sc = new Scanner(System.in);
+       // Scanner sc = new Scanner(System.in);
 
       // word bank
 
@@ -125,7 +125,7 @@ public class javaGui extends JFrame {
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         JFrame j = new JFrame("Word Game");
         j.setContentPane(new javaGui().panel1);
