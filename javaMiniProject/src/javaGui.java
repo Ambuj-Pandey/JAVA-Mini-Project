@@ -85,21 +85,21 @@ public class javaGui extends JFrame {
                         textField1.setText("");
                         j++;
 
-                        descriptionButton.setEnabled(true);  //enabling the buttons after correct word entered
+                        descriptionButton.setEnabled(true);      //enabling the buttons after correct word entered
                         hintButton.setEnabled(true);
                         hintLabel.setText("");                   // Setting label hint to null
-                        desc.setText("");                    // setting description label to null
+                        desc.setText("");                        // setting description label to null
 
                     }
 
                 } else {       //incorrect guess
-                    JOptionPane.showMessageDialog(null, "incorrect guess");
+                    JOptionPane.showMessageDialog(null, "Incorrect guess!! . Try using Hint if haven't already");
 
                 }
             }
         });
 
-//*********************************************************************************************************
+//*****************************************************************************************************************
 
         // word description button action listner
 
