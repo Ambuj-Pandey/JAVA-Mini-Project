@@ -2,42 +2,48 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
+
 
 
 
 
 public class javaGui extends JFrame {
 
+    //Jframe components
+
     private JPanel panel1;
     private JButton submitButton;
     private JTextField textField1;
     private JButton descriptionButton;
-    private JLabel Label;
+    private JLabel hintLabel;
     private JButton hintButton;
     private JLabel desc;
     private JTextArea howToPlayPressTextArea;
 
 
-    int i = 0,n=0,j,k=0;
-    String tl;
+
+    int i = 0,n=0,j,k=0;                    // Array index variables
+
+    String tl;                              // label text string
+    String[] t = new String[10];            // string array for hint
+    String[] td = new String[10];           // description string array
+
     public javaGui() {
 
-       // File file = new File("E:\\JAVA-Mini-Project\\javaMiniProject\\words.txt");
-       // Scanner sc = new Scanner(System.in);
 
-      // word bank
+//*************************************************************************************************************
 
-        final String[] t = new String[10];
-        final String[] td = new String[10];
-        String[] tw = new String[10];
+        // word bank
+
+
+        String[] tw = new String[10]; // string array for words
         tw[0] = "word";
         tw[1] = "switch";
         tw[2] = "kick";
         tw[3] = "mobile";
         tw[4] = "processor";
 
-        for (int j = 0; j<=4; j++){
+        for (int j = 0; j<=4; j++){ // copying contents of 'tw' string array int 't' string array
             t[i] = tw[j];
 
             i++;
@@ -45,8 +51,9 @@ public class javaGui extends JFrame {
         i=-1;
         j=0;
 
-       howToPlayPressTextArea.setEditable(false);// setting text area of instructions to uneditable
+        howToPlayPressTextArea.setEditable(false);// setting text area of instructions to uneditable
 
+//*****************************************************************************************************************
         //description bank
 
         String[] tdw =  new String[10];
@@ -57,47 +64,55 @@ public class javaGui extends JFrame {
         tdw[5] = "An integrated electronic circuit that performs the calculations that run a computer.";
         td[0] = tdw[0];
 
+        hintLabel.setText(tl); //setting labet text
 
-        Label.setText(tl);
+//****************************************************************************************************************
+
+//Action listener for submit button
+
         submitButton.addActionListener(new ActionListener() {
             @Override
 
             public void actionPerformed(ActionEvent e) {
 
                 String t1 = textField1.getText();
-                //correct word
 
+//If else statement to check whether inputted word is correct
                 if (CharSequence.compare(tw[j], t1) == 0) {
                     JOptionPane.showMessageDialog(null, "It's the correct word !!");
-                    int a =0;
-                    if(a==JOptionPane.OK_OPTION){
+
+                    if(JOptionPane.OK_OPTION ==0){
                         textField1.setText("");
                         j++;
 
                         descriptionButton.setEnabled(true);  //enabling the buttons after correct word entered
                         hintButton.setEnabled(true);
-                        Label.setText("");
-                        desc.setText("");
+                        hintLabel.setText("");                   // Setting label hint to null
+                        desc.setText("");                    // setting description label to null
 
                     }
 
-                } else {//incorrect guess
+                } else {       //incorrect guess
                     JOptionPane.showMessageDialog(null, "incorrect guess");
 
                 }
             }
         });
-        // word description
+
+//*********************************************************************************************************
+
+        // word description button action listner
+
         descriptionButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {//description button
+            public void actionPerformed(ActionEvent e) {                     //description button
 
                 JOptionPane.showMessageDialog(null, td[k]);
-                desc.setText(td[k]);
+                desc.setText(td[k]);                                         // setting description label
                 n++;k++;
                 td[k] = tdw[n];
-                int b =0;
-                if(b==JOptionPane.OK_OPTION){   // disabling the button till submitting the correct word
+
+                if(JOptionPane.OK_OPTION==0){   // disabling the button till submitting the correct word
                     descriptionButton.setEnabled(false);
 
                 }
@@ -106,17 +121,21 @@ public class javaGui extends JFrame {
 
             }
         });
-        // hint
+//********************************************************************************************************************
+
+// hint button action listner
+
         hintButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                i++;
-                t[i] = t[i].replaceAll("\\w", String.valueOf('-'));
+                i = j;
+                t[i] = t[i].replaceAll("\\w", String.valueOf('-'));  //replacing the letters of words at the 'i' th index of t array with '-'
                 tl= t[i];
-                Label.setText(tl);
-                int b =0;
-                if(b==JOptionPane.OK_OPTION){  // disabling the button till submitting the correct word
+                hintLabel.setText(tl);                                         //setting hint label
+
+                if(JOptionPane.OK_OPTION ==0){  // disabling the button till submitting the correct word
                     hintButton.setEnabled(false);
+
 
                 }
             }
@@ -124,11 +143,11 @@ public class javaGui extends JFrame {
 
 
     }
+//main function
 
     public static void main(String[] args) {
 
         JFrame j = new JFrame("Word Game");
-        j.setContentPane(new javaGui().panel1);
         j.setContentPane(new javaGui().panel1);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         j.setVisible(true);
