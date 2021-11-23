@@ -53,8 +53,9 @@ public class javaGui extends JFrame {
 
         howToPlayPressTextArea.setEditable(false);// setting text area of instructions to uneditable
 
-//*****************************************************************************************************************
-        //description bank
+//****************************************************************************************************************
+
+// description bank
 
         String[] tdw =  new String[10];
         tdw[0] = "A single distinct conceptual unit of language, comprising inflected and variant forms.";
@@ -123,7 +124,7 @@ public class javaGui extends JFrame {
         });
 //********************************************************************************************************************
 
-// hint button action listner
+// hint button action listener
 
         hintButton.addActionListener(new ActionListener() {
             @Override
