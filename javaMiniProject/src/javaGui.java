@@ -27,30 +27,21 @@ public class javaGui extends JFrame {
                                             // description string array
 
     public javaGui() {
-
-//*************************************************************************************************************
-
         // word bank
-
         String[] tw = new String[10];             // string array for words
         tw[0] = "word";
         tw[1] = "switch";
         tw[2] = "kick";
         tw[3] = "mobile";
         tw[4] = "processor";
-
         for (int j = 0; j<=4; j++){               // copying contents of 'tw' string array int 't' string array
             t[i] = tw[j];
-
             i++;
         }
         i=0;
         j=0;
 
         howToPlayPressTextArea.setEditable(false);// setting text area of instructions to uneditable
-
-//****************************************************************************************************************
-
 // description bank
 
         String[] tdw =  new String[10];
@@ -59,29 +50,19 @@ public class javaGui extends JFrame {
         tdw[2] = "To hit or move somebody/something with your foot.";
         tdw[3] = "Able to move or be moved easily";
         tdw[5] = "An integrated electronic circuit that performs the calculations that run a computer.";
-
-
-
-//****************************************************************************************************************
-
+        
 //Action listener for submit button
-
         submitButton.addActionListener(new ActionListener() {
             @Override
-
             public void actionPerformed(ActionEvent e) {
-
                 String t1 = textField1.getText();
 
 //If else statement to check whether inputted word is correct
-
                 if (CharSequence.compare(tw[j], t1) == 0) {
                     JOptionPane.showMessageDialog(null, "It's the correct word !!");
-
                     if(JOptionPane.OK_OPTION ==0 ){
                         textField1.setText("");
                         j++;n=n+2;
-
                         descriptionButton.setEnabled(true);      //enabling the buttons after correct word entered
                         hintButton.setEnabled(true);
                         hintLabel.setText("");                   // Setting label hint to null
@@ -95,30 +76,22 @@ public class javaGui extends JFrame {
                 }
             }
         });
-
-//*****************************************************************************************************************
-
+        
         // word description button action listener
-
         descriptionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {                     //description button
-
                 JOptionPane.showMessageDialog(null, tdw[k]);
                 desc.setText(tdw[k]);                                         // setting description label
                 k++;
-
-
                 if(JOptionPane.OK_OPTION==0){                                // disabling the button till submitting the correct word
                     descriptionButton.setEnabled(false);
 
                 }
             }
         });
-//********************************************************************************************************************
-
+        
 // hint button action listener
-
         hintButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,24 +102,15 @@ public class javaGui extends JFrame {
                 n--;
 
                 hintButton.setEnabled(false);                                  // disabling the button till submitting the correct word
-
-
-
             }
         });
-
-
     }
 //main function
-
     public static void main(String[] args) {
-
         JFrame j = new JFrame("Word Game");
         j.setContentPane(new javaGui().panel1);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         j.setVisible(true);
         j.pack();
-
-
     }
 }
